@@ -16,7 +16,6 @@ while (intval($n) != floatval($n) || $n < 2){
     $n = trim(fgets(STDIN));
 }
 
-//triangle 1
 
 $rows = $n - 1;
 $countSpace = $n * 2 + 1;
@@ -27,6 +26,7 @@ $counterStars = 1;
 $counterDots = 1;
 $midSpaces = 1;
 $countMid = 1;
+//triangle 1
 /*
 for ($j = 1; $j <=$rows ; $j++){
         while ($counterSpace <= $countSpace){
