@@ -16,89 +16,52 @@ while (intval($n) != floatval($n) || $n < 2){
     $n = trim(fgets(STDIN));
 }
 
-
-$rows = $n - 1;
-$countSpace = $n * 2 + 1;
-$countStars = 1;
-$countDots = $n * 4 + 1;
-$counterSpace = 2;
-$counterStars = 1;
-$counterDots = 1;
-$midSpaces = 1;
-$countMid = 1;
 //triangle 1
 /*
-for ($j = 1; $j <=$rows ; $j++){
-        while ($counterSpace <= $countSpace){
-            echo " ";
-            $counterSpace ++;
+for ($row = 1; $row <= $n; $row++){
+    if ($row == $n){
+        for ($i=1; $i <= $n * 4 + 1; $i++){
+            echo ".";
         }
-        $counterSpace = 2;
-        while ($counterStars <= $countStars){
+        break;
+    }
+        for($i = 1; $i <= (($n - $row) + ($n + 1)); $i++) {
+            echo " ";
+        }
+        for($i = 1; $i <= 2*$row-1; $i++) {
             echo "*";
-            $counterStars ++;
         }
-        $counterStars = 1;
-        while ($counterSpace <= $countSpace){
-            echo " ";
-            $counterSpace ++;
-        }
-        $counterSpace = 2;
-
-    echo PHP_EOL;
-    $countSpace --;
-    $countStars += 2;
-}
-while ($counterDots <= $countDots){
-    echo ".";
-    $counterDots ++;
+        echo PHP_EOL;
 }
 */
 
 // triangle 2
-while ($counterSpace <= $countSpace){
-    echo " ";
-    $counterSpace ++;
-}
-$counterSpace = 2;
-
-echo "*";
-
-while ($counterSpace <= $countSpace){
-    echo " ";
-    $counterSpace ++;
-}
-$counterSpace = 2;
-echo PHP_EOL;
-
-for ($j = 1; $j <=$rows - 1; $j++){
-    while ($counterSpace < $countSpace){
-        echo " ";
-        $counterSpace ++;
+for($row = 1; $row <= $n; $row++){
+    if ($row == $n) {
+        for ($i = 1; $i <= $n * 4 + 1; $i++) {
+            echo ".";
+        }
+        break;
     }
-    $counterSpace = 2;
-
-    echo "*";
-
-    while ($countMid <= $midSpaces){
-        echo " ";
-        $countMid ++;
+    else {
+        for ($i = 1; $i <= (($n - $row) + ($n + 1)); $i++) {
+            echo " ";
+        }
+        if($row == $n - 1){
+            for($i = 1; $i <= 2*$row-1; $i++) {
+                echo "*";
+            }
+            echo PHP_EOL;
+        }
+        else {
+            echo "*";
+            for ($i = 1; $i <= 2 * $row - 3; $i++) {
+                echo " ";
+            }
+            if ($row != 1) {
+                echo "*";
+            }
+            echo PHP_EOL;
+        }
     }
-    $countMid = 1;
-
-    echo "*";
-
-    while ($counterSpace < $countSpace){
-        echo " ";
-        $counterSpace ++;
-    }
-    $counterSpace = 2;
-
-    echo PHP_EOL;
-    $countSpace --;
-    $midSpaces += 2;
-}
-while ($counterDots <= $countDots){
-    echo ".";
-    $counterDots ++;
 }
