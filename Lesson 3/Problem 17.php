@@ -22,28 +22,25 @@ while (intval($squareSide) != floatval($squareSide) || $squareSide < 3 || $squar
 echo "Please enter some sign: ";
 $sign = trim(fgetc(STDIN));
 
-$counterStars = 1;
-$signCounter = 1;
-while ($counterStars <= $squareSide){
-    echo "*";
-    $counterStars ++;
-}
-$counterStars = 1;
-echo PHP_EOL;
-
-for ($i = 1; $i <= $squareSide - 2; $i++){
-    echo "*";
-    while ($signCounter <= $squareSide -2){
-        echo $sign;
-        $signCounter ++;
+for ($row = 1; $row <= $squareSide; $row++){
+    if ($row == 1){
+        for ($i = 1; $i <= $squareSide; $i++){
+            echo "*";
+        }
+        echo PHP_EOL;
     }
-    $signCounter = 1;
-    echo "*";
-    echo PHP_EOL;
+    else if ($row == $squareSide){
+        for ($i = 1; $i <= $squareSide; $i++){
+            echo "*";
+        }
+    }
+    else {
+        echo "*";
+        for ($i = 1; $i <= $squareSide -2; $i++){
+            echo $sign;
+        }
+        echo "*";
+        echo PHP_EOL;
+    }
 }
 
-while ($counterStars <= $squareSide){
-    echo "*";
-    $counterStars ++;
-}
-$counterStars = 1;
