@@ -8,21 +8,25 @@ input: 1   107
 output: 1, 4, skip 3, 16, 25, skip 6, 49, 64, skip 9, 100
  */
 echo "Please enter the first integer number: ";
-$A = trim(fgets(STDIN));
-while (intval($A) != floatval($A)){
+$a = trim(fgets(STDIN));
+while (intval($a) != floatval($a)){
     echo "Invalid input. Please enter an integer number: ";
-    $A = trim(fgets(STDIN));
+    $a = trim(fgets(STDIN));
 }
 echo "Please enter the second integer number: ";
-$B = trim(fgets(STDIN));
-while (intval($B) != floatval($B)){
+$b = trim(fgets(STDIN));
+while (intval($b) != floatval($b)){
     echo "Invalid input. Please enter an integer number: ";
-    $B = trim(fgets(STDIN));
+    $b = trim(fgets(STDIN));
 }
+if ($a > $b){
+    echo "There is no numbers in this interval";
+}
+
 $sum = 0;
-for ($i = $A; $i <= $B; $i++){
+for ($i = $a; $i <= $b; $i++){
     $res = $i * $i;
-    if ($i != $A){
+    if ($i != $a){
         echo ", ";
     }
     if ($res % 3 == 0){
