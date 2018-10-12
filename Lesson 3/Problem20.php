@@ -15,17 +15,20 @@
 9 0 1 2 3 4 5 6 7 8
 0 1 2 3 4 5 6 7 8 9
  */
-for ($row=0; $row<=9; $row++)
-{
-    for ($column=0; $column<=9; $column++)
-    {
+for ($row=0; $row<=9; $row++) {
+    for ($column=0; $column<=9; $column++) {
+        
         if ($row + $column >= 10) {
             echo $row + $column - 9;
-        } else {
+        } 
+        else {
             if ($row + $column + 1 == 10){
                 echo "0";
             }
-            echo $row + $column + 1;
+            else {
+                echo $row + $column + 1;
+            }
+
         }
     }
     echo "\n";
