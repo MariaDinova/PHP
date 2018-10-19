@@ -26,22 +26,3 @@ for ($i = 0; $i < count($inputArray) - 1; $i++){
     }
 }
 echo str_repeat("$bestNum ", $maxLength);
-
-/*
-$startIndex = 0;
-$maxLength = 0;
-$currentLength = 1;
-
-for ($i = 0; $i < count($inputArray) - 1; $i++){
-    if ($inputArray[$i] == $inputArray[$i + 1]){
-        $currentLength ++;
-        $startIndex = $i;
-        if ($currentLength > $maxLength){
-            $maxLength = $currentLength;
-            $startIndex = $i;
-        }
-    }
-}
-$resultArray = array_slice($inputArray, $startIndex, $maxLength - 1);
-var_dump($resultArray);
-*/

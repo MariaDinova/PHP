@@ -13,9 +13,14 @@
 7
 Полученият масив е: {3, -9, 10, -11}
  */
+echo "Please enter a size for the aray: ";
+$arrSize = intval(trim(fgets(STDIN)));
+$inputArray = [];
+for ($i = 0; $i < $arrSize; $i++){
+    echo "Please enter the element " . ($i+1) . " of the array: ";
+    $inputArray[$i] = intval(trim(fgets(STDIN)));
+}
 
-echo "Please enter the elements for array: ";
-$inputArray = explode(',', trim(fgets(STDIN)));
 $resultArray = array();
 for ($i = 0; $i < count($inputArray); $i++){
     if ($i - 1 < 0){
