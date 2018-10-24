@@ -33,7 +33,7 @@ for ($cols = 0; $cols < count($matrix); $cols++){
         if ($rows == $cols){
             $sumDiagonal1 += $matrix[$rows][$cols];
         }
-        else if ($rows + $cols == count($matrix) - 1){
+        if ($rows + $cols == count($matrix) - 1){
             $sumDiagonal2 += $matrix[$rows][$cols];
         }
     }
